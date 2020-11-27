@@ -1,0 +1,194 @@
+<!DOCTYPE html> {% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <title>Alan Lima de Medeiros | Portfólio</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a href="#" class="navbar-brand h1 mb-0">Alan Lima de Medeiros</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item mr-2">
+                        <a href="{% url 'core:index' %}" class="nav-link">Home</a>
+                    </li>
+                    <li class="navbar-item mr-2">
+                        <a href="{% url 'core:index' %}" class="nav-link">Sobre</a>
+                    </li>
+                    <li class="navbar-item mr-2">
+                        <a href="{% url 'core:index' %}" class="nav-link">Serviços</a>
+                    </li>
+                    <li class="navbar-item mr-2">
+                        <a href="{% url 'core:index' %}" class="nav-link">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown mr-2">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Portfólio</a>
+                        <div class="dropdown-menu">
+                            <a href="#nav-item-apresentacao" data-target="#nav-item-apresentacao" class="dropdown-item text-center">Apresentações</a>
+                            <a href="#nav-item-artigo" data-target="#nav-item-artigo" class="dropdown-item text-center">Artigos</a>
+                            <a href="#nav-item-eletro" class="dropdown-item text-center">Eletrônica</a>
+                            <a href="#nav-item-programacao" class="dropdown-item text-center">Programação</a>
+                            <a href="#nav-item-projeto" class="dropdown-item text-center">Projetos</a>
+                        </div>
+                        <!--dropdown-menu-->
+                    </li>
+                </ul>
+            </div>
+            <!--collapse navbar-collapse-->
+        </div>
+        <!--container-->
+    </nav>
+    <section class="bg-port carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/img15.PNG' %}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Portfólio</h1>
+                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Conheça de forma mais aprofundada minhas experiências profissionais e acadêmicas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Áreas de estudo e atuação</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills justify-content-center pb-4" id="pills-nav" role="tablist">
+                        <li class="nav-item">
+                            <a href="#nav-item-apresentacao" class="nav-link active" id="nav-pills-apresentacao" data-toggle="pill">Apresentações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-item-artigo" class="nav-link" id="nav-pills-artigo" data-toggle="pill">Artigos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-item-eletro" class="nav-link" id="nav-pills-eletro" data-toggle="pill">Eletrônica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-item-programacao" class="nav-link" id="nav-pills-programacao" data-toggle="pill">Programação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-item-projeto" class="nav-link" id="nav-pills-projeto" data-toggle="pill">Projetos</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="nav-pills-content">
+                        <div class="tab-pane fade show active" id="nav-item-apresentacao" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for presentation in presentations %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
+                                        <img class="card-img-top" src="{{presentation.ap_img1.url}}" style="height: 250px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{presentation.ap_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{presentation.ap_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-item-artigo" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for article in articles %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
+                                        <img class="card-img-top" src="{{article.art_img1.url}}" style="height: 250px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{ article.art_title }}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{ article.art_published_date }}</small>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-item-eletro" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for eletronic in eletronics %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
+                                        <img class="card-img-top" src="{{eletronic.el_img1.url}}" style="height: 250px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{ eletronic.el_title }}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{ eletronic.el_published_date }}</small>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-programacao" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for program in programs %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
+                                        <img class="card-img-top" src="{{program.prog_img1.url}}" style="height: 250px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{program.prog_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{program.prog_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-projeto" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for project in projects %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
+                                        <img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{project.proj_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{project.proj_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary pb-2 pt-4">
+        <div class="container">
+            <p class="text-center" style="color: #f4f4f4;">Alan Lima de Medeiros - 2020 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <!--Links javascript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
