@@ -20,3 +20,11 @@ def index(request):
         'projects': projects, 
     }
     return render(request,template_name,context)
+
+def details_prototipagem(request, slug):
+	eletronic = get_object_or_404(Eletronica, el_slug=slug)
+	template_name = 'portfolio_posts/details_prototipagem.html'
+	context = {
+        'eletronic': eletronic
+    }
+	return render(request, template_name, context)

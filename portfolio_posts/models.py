@@ -42,10 +42,16 @@ class Eletronica(models.Model):
     el_img1 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem1', null=True, blank=True )
     el_img2 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem2', null=True, blank=True )
     el_img3 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem3', null=True, blank=True )
+    el_img4 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem3', null=True, blank=True )
+    el_img5 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem3', null=True, blank=True )
     el_published_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.el_title
+
+    def get_absolute_url(self):
+        return reverse('portfolio_posts:details_prototipagem', args=[str(self.el_slug)])
+
     class Meta:
         verbose_name = 'Eletrônica'
         verbose_name_plural = 'Eletrônicas'

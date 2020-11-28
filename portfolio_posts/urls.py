@@ -5,4 +5,5 @@ app_name = 'portfolio_posts'
 
 urlpatterns = [
 	path('', views.index, name='index'),
+	re_path('(?P<slug>[\w_-]+)/', views.details_prototipagem, name='details_prototipagem'),
 ]

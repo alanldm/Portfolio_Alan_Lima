@@ -127,7 +127,7 @@
                                 <div class="card-deck">
                                     {% for eletronic in eletronics %}
                                     <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
-                                        <img class="card-img-top" src="{{eletronic.el_img1.url}}" style="height: 250px;">
+                                        <a href="{{eletronic.get_absolute_url}}"><img class="card-img-top" src="{{eletronic.el_img1.url}}" style="height: 250px;"></a>
                                         <div class="card-body">
                                             <h3 class="card-title text-center">{{ eletronic.el_title }}</h3>
                                         </div>
