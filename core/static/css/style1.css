@@ -79,7 +79,7 @@ section .habilidades {
 
 .habilidades .line-text-blue div {
     position: absolute;
-    height: 370px;
+    height: 200px;
     width: 7px;
     left: 50%;
     margin-top: 180px;
