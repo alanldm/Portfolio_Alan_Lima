@@ -79,7 +79,7 @@ section .habilidades {
 
 .habilidades .line-text-blue div {
     position: absolute;
-    height: 200px;
+    height: 330px;
     width: 7px;
     left: 50%;
     margin-top: 180px;
@@ -187,6 +187,21 @@ section .habilidades {
     padding-left: 3px;
     display: inline-block;
     vertical-align: top;
+}
+
+.modal-footer a {
+    background-color: #4288C2;
+    color: #F4F4F4;
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #a2a2a2;
+    transition: 0.4s;
+}
+
+.modal-footer a:hover {
+    background-color: #0D426E;
+    transition: 0.4s;
 }
 
 section .bg-port {
