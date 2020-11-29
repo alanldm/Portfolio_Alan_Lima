@@ -57,21 +57,6 @@ class Eletronica(models.Model):
         verbose_name_plural = 'Eletrônicas'
         ordering = ['el_published_date']
 
-class Programacao(models.Model):
-    prog_title = models.CharField('Título', max_length=200)
-    prog_slug = models.SlugField('Atalho')
-    prog_text = models.TextField('Texto')
-    prog_img1 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem1', null=True, blank=True )
-    prog_img2 = models.ImageField(upload_to='portfolio_posts/images', verbose_name='Imagem2', null=True, blank=True )
-    prog_published_date = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return self.prog_title
-    class Meta:
-        verbose_name = 'Programa'
-        verbose_name_plural = 'Programas'
-        ordering = ['prog_published_date']
-
 class Projeto(models.Model):
     proj_title = models.CharField('Título', max_length=200)
     proj_slug = models.SlugField('Atalho')

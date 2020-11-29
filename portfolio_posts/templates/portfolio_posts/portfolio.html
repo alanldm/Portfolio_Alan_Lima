@@ -78,10 +78,7 @@
                             <a href="#nav-item-artigo" class="nav-link" id="nav-pills-artigo" data-toggle="pill">Artigos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#nav-item-eletro" class="nav-link" id="nav-pills-eletro" data-toggle="pill">Eletrônica</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#nav-item-programacao" class="nav-link" id="nav-pills-programacao" data-toggle="pill">Programação</a>
+                            <a href="#nav-item-eletro" class="nav-link" id="nav-pills-eletro" data-toggle="pill">Prototipagem</a>
                         </li>
                         <li class="nav-item">
                             <a href="#nav-item-projeto" class="nav-link" id="nav-pills-projeto" data-toggle="pill">Projetos</a>
@@ -133,23 +130,6 @@
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">{{ eletronic.el_published_date }}</small>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show" id="nav-item-programacao" role="tabpanel">
-                            <div class="row">
-                                <div class="card-deck">
-                                    {% for program in programs %}
-                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
-                                        <img class="card-img-top" src="{{program.prog_img1.url}}" style="height: 250px;">
-                                        <div class="card-body">
-                                            <h3 class="card-title text-center">{{program.prog_title}}</h3>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">{{program.prog_published_date}}</small>
                                         </div>
                                     </div>
                                     {% endfor %}

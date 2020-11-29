@@ -251,6 +251,14 @@ section .bg-port {
 
 .text-details a {
     background-color: #4288C2;
+    padding: 7px 12px;
+    border-radius: 7px;
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.text-details a:hover {
+    background-color: #0D426E;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
