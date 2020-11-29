@@ -90,7 +90,7 @@
                                 <div class="card-deck">
                                     {% for presentation in presentations %}
                                     <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
-                                        <img class="card-img-top" src="{{presentation.ap_img1.url}}" style="height: 250px;">
+                                        <a href="{{presentation.get_absolute_url_ap}}"><img class="card-img-top" src="{{presentation.ap_img1.url}}" style="height: 250px;"></a>
                                         <div class="card-body">
                                             <h3 class="card-title text-center">{{presentation.ap_title}}</h3>
                                         </div>
@@ -107,7 +107,7 @@
                                 <div class="card-deck">
                                     {% for article in articles %}
                                     <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
-                                        <img class="card-img-top" src="{{article.art_img1.url}}" style="height: 250px;">
+                                        <a href="{{article.get_absolute_url_art}}"><img class="card-img-top" src="{{article.art_img1.url}}" style="height: 250px;"></a>
                                         <div class="card-body">
                                             <h3 class="card-title text-center">{{ article.art_title }}</h3>
                                         </div>
@@ -124,7 +124,7 @@
                                 <div class="card-deck">
                                     {% for eletronic in eletronics %}
                                     <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
-                                        <a href="{{eletronic.get_absolute_url}}"><img class="card-img-top" src="{{eletronic.el_img1.url}}" style="height: 250px;"></a>
+                                        <a href="{{eletronic.get_absolute_url_el}}"><img class="card-img-top" src="{{eletronic.el_img1.url}}" style="height: 250px;"></a>
                                         <div class="card-body">
                                             <h3 class="card-title text-center">{{ eletronic.el_title }}</h3>
                                         </div>
@@ -141,7 +141,7 @@
                                 <div class="card-deck">
                                     {% for project in projects %}
                                     <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2">
-                                        <img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;">
+                                        <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
                                         <div class="card-body">
                                             <h3 class="card-title text-center">{{project.proj_title}}</h3>
                                         </div>

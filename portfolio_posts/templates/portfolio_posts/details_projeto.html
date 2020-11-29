@@ -55,13 +55,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{presentation.ap_img1.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
+                <img src="{{project.proj_img1.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
             </div>
             <div class="carousel-item">
-                <img src="{{presentation.ap_img2.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
+                <img src="{{project.proj_img2.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
             </div>
             <div class="carousel-item">
-                <img src="{{presentation.ap_img3.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
+                <img src="{{project.proj_img3.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
             </div>
             <a href="#carouselInitial2" class="carousel-control-prev" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -75,14 +75,14 @@
     </section>
     <section class="text-details" style="background-color: #f4f4f4;">
         <div class="container">
-            <h1 class="text-center py-4">{{presentation.ap_title}}</h1>
+            <h1 class="text-center py-4">{{project.proj_title}}</h1>
             <div class="row">
                 <div class="col-12">
-                    <h5 class="text-right">Publicado em: {{presentation.ap_published_date}}</h5>
+                    <h5 class="text-right">Publicado em: {{project.proj_published_date}}</h5>
                 </div>
             </div>
             <div class="row text-justify">
-                <p class="pt-3">{{presentation.ap_text|linebreaks}}</p>
+                <p class="pt-3">{{project.proj_text|linebreaks}}</p>
             </div>
             <a class="mb-2" href="{% url 'portfolio_posts:index' %}">Voltar</a>
         </div>

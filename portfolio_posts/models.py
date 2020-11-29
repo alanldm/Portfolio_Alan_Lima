@@ -15,7 +15,7 @@ class Apresentacao(models.Model):
     def __str__(self):
         return self.ap_title
 
-    def get_absolute_url(self):
+    def get_absolute_url_ap(self):
         return reverse('portfolio_posts:details_apresentacao', args=[str(self.ap_slug)])
 
     class Meta:
@@ -35,7 +35,7 @@ class Artigo(models.Model):
     def __str__(self):
         return self.art_title
 
-    def get_absolute_url(self):
+    def get_absolute_url_art(self):
         return reverse('portfolio_posts:details_artigo', args=[str(self.art_slug)])
 
     class Meta:
@@ -57,7 +57,7 @@ class Eletronica(models.Model):
     def __str__(self):
         return self.el_title
 
-    def get_absolute_url(self):
+    def get_absolute_url_el(self):
         return reverse('portfolio_posts:details_prototipagem', args=[str(self.el_slug)])
 
     class Meta:
@@ -77,7 +77,7 @@ class Projeto(models.Model):
     def __str__(self):
         return self.proj_title
 
-    def get_absolute_url(self):
+    def get_absolute_url_proj(self):
         return reverse('portfolio_posts:details_projeto', args=[str(self.proj_slug)])
 
     class Meta:

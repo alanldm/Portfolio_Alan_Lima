@@ -44,9 +44,10 @@ def details_apresentacao(request, slug):
 	return render(request, template_name, context)
 
 def details_projeto(request, slug):
-	article = get_object_or_404(Projeto, proj_slug=slug)
+	project = get_object_or_404(Projeto, proj_slug=slug)
 	template_name = 'portfolio_posts/details_projeto.html'
 	context = {
-        'projeto': projeto
+        'project': project
     }
 	return render(request, template_name, context)
+
