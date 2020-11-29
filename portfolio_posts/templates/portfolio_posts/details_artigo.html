@@ -51,10 +51,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="{{article.art_img1.url}}" alt="">
+                    <img class="mt-4" src="{{article.art_img1.url}}" alt="" style="width: 100%; height: 700px;">
                 </div>
                 <div class="col-sm-6">
-                    <img src="{{article.art_img2.url}}" alt="">
+                    <img class="mt-4" src="{{article.art_img2.url}}" alt="" style="width: 100%; height: 700px;">
                 </div>
             </div>
         </div>
@@ -70,9 +70,13 @@
             <div class="row text-justify">
                 <p class="pt-3">{{article.art_text|linebreaks}}</p>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <img class="mt-2 mb-4" src="{{article.art_img3.url}}" alt="" style="width: 100%;;">
+                </div>
+            </div>
             <a class="mb-2" href="{% url 'portfolio_posts:index' %}">Voltar</a>
         </div>
-
     </section>
 
 

@@ -57,12 +57,15 @@
             <div class="carousel-item active">
                 <img src="{{project.proj_img1.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
             </div>
+            {% if project.proj_img2 %}
             <div class="carousel-item">
                 <img src="{{project.proj_img2.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
             </div>
+            {% endif %} {% if project.proj_img3 %}
             <div class="carousel-item">
                 <img src="{{project.proj_img3.url}}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
             </div>
+            {% endif %}
             <a href="#carouselInitial2" class="carousel-control-prev" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
                 <span class="sr-only">Anterior</span>
