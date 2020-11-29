@@ -14,6 +14,10 @@ class Apresentacao(models.Model):
 
     def __str__(self):
         return self.ap_title
+
+    def get_absolute_url(self):
+        return reverse('portfolio_posts:details_apresentacao', args=[str(self.ap_slug)])
+
     class Meta:
         verbose_name = 'Apresentação'
         verbose_name_plural = 'Apresentações'
@@ -30,6 +34,10 @@ class Artigo(models.Model):
 
     def __str__(self):
         return self.art_title
+
+    def get_absolute_url(self):
+        return reverse('portfolio_posts:details_artigo', args=[str(self.art_slug)])
+
     class Meta:
         verbose_name = 'Artigo'
         verbose_name_plural = 'Artigos'
@@ -68,6 +76,10 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.proj_title
+
+    def get_absolute_url(self):
+        return reverse('portfolio_posts:details_projeto', args=[str(self.proj_slug)])
+
     class Meta:
         verbose_name = 'Projeto'
         verbose_name_plural = 'Projetos'
