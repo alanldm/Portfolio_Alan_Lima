@@ -12,6 +12,10 @@ body {
     scroll-behavior: smooth;
 }
 
+clear {
+    clear: both;
+}
+
 .carousel-small {
     display: none;
 }
@@ -260,6 +264,133 @@ section .bg-port {
 .text-details a:hover {
     background-color: #0D426E;
 }
+
+
+/*INICIO NOVA SIDEBAR*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: #c7ced9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    margin-left: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #323232;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: #0D426E;
+}
+
+.sidenav a:hover:nth-of-type(1) {
+    color: #f1f1f1;
+    background-color: #c7ced9;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/*FIM NOVA SIDEBAR*/
+
+
+/*INICIO SEÇÃO INICIO*/
+
+.inicio button {
+    margin-left: 100px;
+}
+
+.inicio h1 {
+    font-size: 47px;
+}
+
+.social-media img {
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .inicio button {
+        margin-left: 10px;
+    }
+}
+
+
+/*FIM SEÇÃO INICIO*/
+
+
+/*INICIO HIGHLIGHTS*/
+
+.flex-mosaico {
+    display: flex;
+}
+
+.item-1-mosaico {
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+    height: 400px;
+}
+
+.item-2-mosaico {
+    width: 40%;
+    background-color: #0D426E;
+}
+
+.item-2-mosaico p {
+    color: white;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.item-2-mosaico p.titulo-mosaico {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1050px) {
+    .flex-mosaico {
+        display: block;
+    }
+    .item-1-mosaico,
+    .item-2-mosaico {
+        width: 100%;
+    }
+    .item-2-mosaico {
+        min-height: 200px;
+    }
+}
+
+
+/*FIM HISHLIGHTS*/
 
 @media (min-width: 576px) and (max-width: 767.98px) {
     .card-deck .card {

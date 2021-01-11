@@ -5,125 +5,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/logo.PNG' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap1.css' %}">
     <link rel="stylesheet" href="{% static 'css/style1.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <title>Alan Lima de Medeiros</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div id="mySidenav" class="sidenav">
+        <div class="py-3 px-3 mb-2">
+            <div class="media d-flex align-items-center"><img class="mx-auto mb-3" src="{% static 'img/logo.PNG' %}" alt="" style="width: 100px;"></div>
+            <div class="media-body">
+                <h4 class="text-center">Alan Lima de Medeiros</h4>
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span>&times;</span></a>
+        <a href="#sobre"><i class="fas fa-user" style="margin-right: 5px;"></i>Sobre</a>
+        <a href="#formacao"><i class="fas fa-graduation-cap" style="margin-right: 5px;"></i>Formação</a>
+        <a href="#habilidades"><i class="fas fa-user-cog" style="margin-right: 5px;"></i>Habilidades</a>
+        <a href="#servicos"><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Serviços</a>
+        <a href="{% url 'portfolio_posts:index' %}"><i class="fas fa-folder-open" style="margin-right: 5px;"></i>Portfólio</a>
+        <a href="#contato"><i class="fas fa-phone" style="margin-right: 5px;"></i>Contato</a>
+        <a href="{% url 'core:highlights' %}"><i class="fas fa-star" style="margin-right: 5px;"></i>HighLights</a>
+    </div>
+    <section class="inicio" style="background-image: url(../../static/img/bg-inicio-ok.PNG); height: 650px;">
+        <button type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 my-5" onclick="openNav()" style="position: fixed; z-index: 3; border: 1px solid #323232"><i class="fa fa-bars mr-2"></i>Menu</button>
         <div class="container">
-            <a href="#" class="navbar-brand h1 mb-0">Alan Lima de Medeiros</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSite">
-                <ul class="navbar-nav ml-auto">
-                    <li class="navbar-item mr-2">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="navbar-item mr-2">
-                        <a href="#sobre" class="nav-link">Sobre</a>
-                    </li>
-                    <li class="navbar-item mr-2">
-                        <a href="#servicos" class="nav-link">Serviços</a>
-                    </li>
-                    <li class="navbar-item mr-2">
-                        <a href="#contato" class="nav-link">Contato</a>
-                    </li>
-                    <li class="nav-item dropdown mr-2">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Portfólio</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item text-center">Eletrônica</a>
-                            <a href="#" class="dropdown-item text-center">Programação</a>
-                            <a href="#" class="dropdown-item text-center">Projetos</a>
-                            <a href="#" class="dropdown-item text-center">Apresentações</a>
-                            <a href="#" class="dropdown-item text-center">Artigos</a>
-                        </div>
-                        <!--dropdown-menu-->
-                    </li>
-                </ul>
+            <h1 class="pb-5" style="color: #f1f1f1; padding-top: 150px;">Alan Lima de Medeiros</h1>
+            <h2>
+                <a href="" class="typewrite" data-period="2000" data-type='[ "Eletrotécnico", "Programador", "Projetista de PCBs", "Pesquisador" ]' style="color: #f1f1f1; text-decoration: none;">
+                    <span class="wrap"></span>
+                </a>
+            </h2>
+            <div class="social-media mt-5" style="display: inline-block; color: #f1f1f1;">
+                <a href="https://instagram.com/maribazevedo_/" target="_blank"><img src="{% static 'img/wpp2.png' %}" alt="" class="mx-1"></a>
+                <a href="https://api.whatsapp.com/send?phone=5584988234626" target="_blank"><img src="{% static 'img/insta2.png' %}" alt="" class="mx-1"></a>
+                <a href="https://www.linkedin.com/in/mariana-brito-azevedo/" target="_blank"><img src="{% static 'img/linkedin2.png' %}" alt="" class="mx-1"></a>
+                <a href="https://www.linkedin.com/in/mariana-brito-azevedo/" target="_blank"><img src="{% static 'img/gmail2.png' %}" alt="" class="mx-1"></a>
             </div>
-            <!--collapse navbar-collapse-->
-        </div>
-        <!--container-->
-    </nav>
-    <section id="carouselInitial2" class="carousel slide carousel-big" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselInitial2" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselInitial2" data-slide-to="1"></li>
-            <li data-target="#carouselInitial2" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'img/img7.PNG' %}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Programação</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Experiência em programação de arquivos com as linguagens Python, C++, Java e Arduino</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/img10.PNG' %}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Eletrônica</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Experiência em montagem de placas de circuito impresso</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/img8.PNG' %}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Projetos</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Experiência em confecção de projetos elétricos de baixa e alta tensão</p>
-                </div>
-            </div>
-            <a href="#carouselInitial2" class="carousel-control-prev" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a href="#carouselInitial2" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="sr-only">Avançar</span>
-            </a>
-        </div>
-    </section>
-    <section id="carouselInitial" class="carousel slide carousel-small" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselInitial" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselInitial" data-slide-to="1"></li>
-            <li data-target="#carouselInitial" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'img/img11.PNG' %}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Programação</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Experiência em programação de arquivos com as linguagens Python, C++, Java e Arduino</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/img13.PNG'%}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Eletrônica</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Experiência em montagem de placas de circuito impresso</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/img12.PNG'%}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Projetos</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Experiência em confecção de projetos elétricos de baixa e alta tensão</p>
-                </div>
-            </div>
-            <a href="#carouselInitial" class="carousel-control-prev" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a href="#carouselInitial" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="sr-only">Avançar</span>
-            </a>
         </div>
     </section>
     <section class="sobreMim" id="sobre" style="background-color: #f4f4f4;">
@@ -148,7 +71,7 @@
             </div>
         </div>
     </section>
-    <section class="formacao bg-primary">
+    <section class="formacao bg-primary" id="formacao">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-5">
@@ -195,18 +118,22 @@
                         <p>Desde Agosto de 2020, atuo como estagiário de eletrotécnica na empresa RN Proteção e Sistemas Eletrônicos, auxiliando na manutenção de centrais de alarme monitoradas, centrais de incêndio e de choque, bem como na troca, programação
                             e manutenção de câmeras, sensores e portões.</p>
                         <h5 id="item2-2">Bolsa de pesquisa</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloribus nihil, exercitationem id facere maiores vitae dignissimos sit porro. Facere nostrum voluptate consequuntur dolor ipsam repudiandae fugit non temporibus impedit.</p>
+                        <p>Durante minha participação no projeto “Integração de processos industriais independentes para rastreabilidade do fluxo de produção baseada em Internet das Coisas” pude conhecer o funcionamento de um Estação de Tratamento de Água,
+                            focando, principalmente, nos seus componentes industriais automatizados. Com isso, o meu principal objetivo nesse trabalho era desenvolver um sistema em ScadaBR que pudesse supervisionar todo o tratamento, emitindo alertas
+                            quando necessário. Por fim, houve um breve estudo do funcionamento do microcontrolador Raspberry.</p>
                         <h5 id="item2-3">PRD - Potiguar Rocket Design</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloribus nihil, exercitationem id facere maiores vitae dignissimos sit porro. Facere nostrum voluptate consequuntur dolor ipsam repudiandae fugit non temporibus impedit.</p>
+                        <p>Ingressei no Potiguar Rocket Design no setor de Eletrônica e Controle em abril de 2020, realizando, desde então, diversos projetos de prototipagem com o auxílio dos softwares KiCAD e SolidWorks. Além disso, nesse projeto pude realizar
+                            a programação em C de algumas dessas placas de circuito impresso.</p>
                         <h5 id="item2-4">Monitoria de matemática</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloribus nihil, exercitationem id facere maiores vitae dignissimos sit porro. Facere nostrum voluptate consequuntur dolor ipsam repudiandae fugit non temporibus impedit.</p>
+                        <p>Atuei como monitor de matemática no Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte de abril de 2018 a fevereiro de 2019. Na monitoria fui capaz de tirar dúvidas individuais de alunos, bem como ministrar
+                            aulas extras de reforço para grupos de alunos.</p>
 
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="habilidades" style="background-color: #f4f4f4;">
+    <section class="habilidades" id="habilidades" style="background-color: #f4f4f4;">
         <div class="line-text-blue">
             <div></div>
         </div>
@@ -249,15 +176,15 @@
                         <div class="barras mr-4 ml-4 pl-2">
                             <h5 class="text-left">C/C++</h5>
                             <div class="progress text-justify mb-3">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%; background-color: #4288C2;">80%</div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%; background-color: #4288C2;">85%</div>
                             </div>
                             <h5 class="text-left">Java</h5>
                             <div class="progress text-justify mb-3">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%; background-color: #4288C2;">85%</div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #4288C2;">70%</div>
                             </div>
                             <h5 class="text-left">Python</h5>
                             <div class="progress text-justify mb-3">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%; background-color: #4288C2;">75%</div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%; background-color: #4288C2;">80%</div>
                             </div>
                         </div>
                     </div>
@@ -271,41 +198,41 @@
                 <h2 class="display-5 d-inline h1-geral border-bottom-1" style="color: #f4f4f4;">SERVIÇOS</h2>
             </div>
             <div class="row justify-content-sm-center">
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-4 col-md-6">
                     <div class="card mb-5">
                         <div class="circle-card mx-auto mt-5" style="background-color: #4288C2;">
-                            <img src="{% static 'img/apresentacao.png' %}" alt="">
+                            <img src="{% static 'img/estagio.png' %}" alt="">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-center">Apresentações</h3>
-                            <p class="card-text pt-5 text-center">Apresentações profissionais de PowerPoint</p>
+                            <h3 class="card-title text-center">Estágios</h3>
+                            <p class="card-text pt-5 text-center">Experiências profissionais</p>
                         </div>
                         <div class="card-body mt-5 text-right">
                             <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal1">Saiba mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-4 col-md-6">
                     <div class="card mb-5">
                         <div class="circle-card mx-auto mt-5" style="background-color: #4288C2;">
-                            <img src="{% static 'img/artigo.png' %}" alt="">
+                            <img src="{% static 'img/tecnico.png' %}" alt="">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-center">Artigos</h3>
-                            <p class="card-text pt-5 text-center">Artigos científicos apresentados em congressos</p>
+                            <h3 class="card-title text-center">Técnico</h3>
+                            <p class="card-text pt-5 text-center">Projetos técnicos</p>
                         </div>
                         <div class="card-body mt-5 text-right">
                             <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal2">Saiba mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-4 col-md-6">
                     <div class="card mb-5">
                         <div class="circle-card mx-auto mt-5" style="background-color: #4288C2;">
                             <img src="{% static 'img/PCB.png' %}" alt="">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-center">Prototipagem</h3>
+                            <h3 class="card-title text-center">Eletrônica</h3>
                             <p class="card-text pt-5 text-center">Placas de circuito impresso e eletrônica</p>
                         </div>
                         <div class="card-body mt-5 text-right">
@@ -313,14 +240,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-4 col-md-6">
                     <div class="card mb-5">
                         <div class="circle-card mx-auto mt-5" style="background-color: #4288C2;">
-                            <img src="{% static 'img/projeto.png' %}" alt="">
+                            <img src="{% static 'img/modelagem.png' %}" alt="">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-center">Projetos</h3>
-                            <p class="card-text pt-5 text-center">Projetos elétricos e de programação</p>
+                            <h3 class="card-title text-center">Modelagem 3D</h3>
+                            <p class="card-text pt-5 text-center">Protótipos em 3D</p>
+                        </div>
+                        <div class="card-body mt-5 text-right">
+                            <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal4">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card mb-5">
+                        <div class="circle-card mx-auto mt-5" style="background-color: #4288C2;">
+                            <img src="{% static 'img/web.png' %}" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Programação web</h3>
+                            <p class="card-text pt-5 text-center">Desenvolvimento de sites</p>
+                        </div>
+                        <div class="card-body mt-5 text-right">
+                            <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal4">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card mb-5">
+                        <div class="circle-card mx-auto mt-5" style="background-color: #4288C2;">
+                            <img src="{% static 'img/artigo.png' %}" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Artigos</h3>
+                            <p class="card-text pt-5 text-center">Publicações científicas</p>
                         </div>
                         <div class="card-body mt-5 text-right">
                             <a href="#" class="card-link" data-toggle="modal" data-target="#siteModal4">Saiba mais</a>
@@ -364,63 +319,26 @@
                             <div class="form-group col-sm-12">
                                 <button type="submit" class="btn btn-primary float-right">Enviar</button>
                             </div>
-                            <!--{% if is_valid %}
-                            <p>Você enviou o formulário com sucesso</p>
-                            {% endif %}
-                            <form class="" method="post" action="#contato">
-                                {% csrf_token %}
-                                <fieldset>
-                                    {% for field in form %}
-                                    <div class="form-group">
-                                        {{ field.label_tag }} {{ field }} {% if field.erros %}
-                                        <ul class="errorlist">
-                                            {% for error in field.errors %}
-                                            <li>{{error}}</li>
-                                            {% endfor %}
-                                        </ul>
-                                        {% endif %}
-                                    </div>
-                                    {% endfor %}
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary float-right">Enviar</button>
-                                    </div>
-                                </fieldset>
-                            </form>-->
                         </div>
                     </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center pt-3 message-img-text">
-                    <img src="{% static 'img/social.png' %}" alt="" style="width: 40px;">
-                    <h4>Redes sociais</h4>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="col-lg-3 col-sm-6 text-contato pb-2 justify-content-center">
-                    <img src="{% static 'img/wpp.png'%}" alt="" style="width: 50px;">
-                    <p>+55 84 99813-7303</p>
-                </div>
-                <div class="col-lg-3 col-sm-6 text-contato pb-2">
-                    <img src="{% static 'img/insta.png' %}" alt="" style="width: 50px;">
-                    <p>alan_lm37</p>
-                </div>
-                <div class="col-lg-3 col-sm-6 text-contato pb-2">
-                    <img src="{% static 'img/linkedin.png' %}" alt="" style="width: 50px;">
-                    <p>Alan Lima</p>
-                </div>
-                <div class="col-lg-3 col-sm-6 text-contato pb-2">
-                    <img src="{% static 'img/gmail.png' %}" alt="" style="width: 50px;">
-                    <p>alanldm@ufrn.edu.br</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="text-center py-3">Ou entre em contato pelo e-mail: alanlimamedeiross@gmail.com</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="bg-primary pb-2 pt-4">
+    <footer class="bg-primary pb-2 pt-4" id="footer">
         <div class="container">
             <p class="text-center" style="color: #f4f4f4;">Alan Lima de Medeiros - 2020 - Todos os direitos reservados</p>
         </div>
     </footer>
+
+
+
+
 
 
 
@@ -517,6 +435,8 @@
 
 
     <!--Links javascript-->
+    <script src="{% static 'js/text.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

@@ -8,56 +8,37 @@
     <link rel="stylesheet" href="{% static 'css/style1.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <title>Alan Lima de Medeiros | Portfólio</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a href="{% url 'core:index' %}" class="navbar-brand h1 mb-0">Alan Lima de Medeiros</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSite">
-                <ul class="navbar-nav ml-auto">
-                    <li class="navbar-item mr-2">
-                        <a href="{% url 'core:index' %}" class="nav-link">Home</a>
-                    </li>
-                    <li class="navbar-item mr-2">
-                        <a href="{% url 'core:index' %}" class="nav-link">Sobre</a>
-                    </li>
-                    <li class="navbar-item mr-2">
-                        <a href="{% url 'core:index' %}" class="nav-link">Serviços</a>
-                    </li>
-                    <li class="navbar-item mr-2">
-                        <a href="{% url 'core:index' %}" class="nav-link">Contato</a>
-                    </li>
-                    <li class="nav-item dropdown mr-2">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Portfólio</a>
-                        <div class="dropdown-menu">
-                            <a href="#nav-item-apresentacao" data-target="#nav-item-apresentacao" class="dropdown-item text-center">Apresentações</a>
-                            <a href="#nav-item-artigo" data-target="#nav-item-artigo" class="dropdown-item text-center">Artigos</a>
-                            <a href="#nav-item-eletro" class="dropdown-item text-center">Eletrônica</a>
-                            <a href="#nav-item-programacao" class="dropdown-item text-center">Programação</a>
-                            <a href="#nav-item-projeto" class="dropdown-item text-center">Projetos</a>
-                        </div>
-                        <!--dropdown-menu-->
-                    </li>
-                </ul>
+    <div id="mySidenav" class="sidenav">
+        <div class="py-3 px-3 mb-2">
+            <div class="media d-flex align-items-center"><img class="mx-auto mb-3" src="{% static 'img/logo.PNG' %}" alt="" style="width: 100px;"></div>
+            <div class="media-body">
+                <h4 class="text-center">Alan Lima de Medeiros</h4>
             </div>
-            <!--collapse navbar-collapse-->
         </div>
-        <!--container-->
-    </nav>
-    <section class="bg-port carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'img/img15.PNG' %}" class="img-fluid d-block" style="height: calc(100vh - 59px); width: 100%;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="mb-4" style="text-shadow: 3px 3px 5px #000000;">Portfólio</h1>
-                    <p class="lead" style="text-shadow: 3px 3px 5px #000000;">Conheça de forma mais aprofundada minhas experiências profissionais e acadêmicas</p>
-                </div>
-            </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span>&times;</span></a>
+        <a href="{% url 'core:index' %}"><i class="fas fa-home" style="margin-right: 5px;"></i>Home</a>
+        <a href="#formacao"><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Estágios</a>
+        <a href="#tecnico"><i class="fas fa-cogs" style="margin-right: 5px;"></i>Técnico</a>
+        <a href="#servicos"><i class="fas fa-microchip" style="margin-right: 5px;"></i>Eletrônica</a>
+        <a href="#"><i class="fas fa-cube" style="margin-right: 5px;"></i>Modelagem 3D</a>
+        <a href="#contato"><i class="fas fa-code" style="margin-right: 5px;"></i>Programação web</a>
+        <a href="#"><i class="fas fa-file-alt" style="margin-right: 5px;"></i>Artigos</a>
+    </div>
+    <section class="inicio" style="background-image: url(../../static/img/bg-inicio-ok.PNG); height: 380px;">
+        <button type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 my-5" onclick="openNav()" style="position: fixed; z-index: 3; border: 1px solid #323232"><i class="fa fa-bars mr-2"></i>Menu</button>
+        <div class="container">
+            <h1 class="pb-5" style="color: #f1f1f1; padding-top: 150px;">HighLights - Meus melhores trabalhos</h1>
+            <h2>
+                <a href="" class="typewrite" data-period="2000" data-type='[ "Estágio", "Técnico", "Eletrônica", "Programação Web" ]' style="color: #f1f1f1; text-decoration: none;">
+                    <span class="wrap"></span>
+                </a>
+            </h2>
         </div>
     </section>
     <section class="jumbotron jumbotron-fluid">
@@ -72,74 +53,29 @@
                 <div class="col-12">
                     <ul class="nav nav-pills justify-content-center pb-4" id="pills-nav" role="tablist">
                         <li class="nav-item">
-                            <a href="#nav-item-apresentacao" class="nav-link active" id="nav-pills-apresentacao" data-toggle="pill">Apresentações</a>
+                            <a href="#nav-item-artigo" class="nav-link active" id="nav-pills-artigo" data-toggle="pill">Artigos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#nav-item-artigo" class="nav-link" id="nav-pills-artigo" data-toggle="pill">Artigos</a>
+                            <a href="#nav-item-eletronica" class="nav-link" id="nav-pills-eletronica" data-toggle="pill">Eletrônica</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#nav-item-eletro" class="nav-link" id="nav-pills-eletro" data-toggle="pill">Prototipagem</a>
+                            <a href="#nav-item-estagio" class="nav-link" id="nav-pills-estagio" data-toggle="pill">Estágios</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#nav-item-projeto" class="nav-link" id="nav-pills-projeto" data-toggle="pill">Projetos</a>
+                            <a href="#nav-item-modelagem" class="nav-link" id="nav-pills-modelagem" data-toggle="pill">Modelagem 3D</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-item-programacaoweb" class="nav-link" id="nav-pills-programacaoweb" data-toggle="pill">Programação web</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-item-tecnico" class="nav-link" id="nav-pills-tecnico" data-toggle="pill">Técnico</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="nav-pills-content">
-                        <div class="tab-pane fade show active" id="nav-item-apresentacao" role="tabpanel">
+                        <div class="tab-pane fade show" id="nav-item-artigo" role="tabpanel">
                             <div class="row">
                                 <div class="card-deck">
-                                    {% for presentation in presentations %}
-                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
-                                        <a href="{{presentation.get_absolute_url_ap}}"><img class="card-img-top" src="{{presentation.ap_img1.url}}" style="height: 250px;"></a>
-                                        <div class="card-body">
-                                            <h3 class="card-title text-center">{{presentation.ap_title}}</h3>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">{{presentation.ap_published_date}}</small>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-item-artigo" role="tabpanel">
-                            <div class="row">
-                                <div class="card-deck">
-                                    {% for article in articles %}
-                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
-                                        <a href="{{article.get_absolute_url_art}}"><img class="card-img-top" src="{{article.art_img3.url}}" style="height: 250px;"></a>
-                                        <div class="card-body">
-                                            <h3 class="card-title text-center">{{ article.art_title }}</h3>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">{{ article.art_published_date }}</small>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-item-eletro" role="tabpanel">
-                            <div class="row">
-                                <div class="card-deck">
-                                    {% for eletronic in eletronics %}
-                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
-                                        <a href="{{eletronic.get_absolute_url_el}}"><img class="card-img-top" src="{{eletronic.el_img1.url}}" style="height: 250px;"></a>
-                                        <div class="card-body">
-                                            <h3 class="card-title text-center">{{ eletronic.el_title }}</h3>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">{{ eletronic.el_published_date }}</small>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show" id="nav-item-projeto" role="tabpanel">
-                            <div class="row">
-                                <div class="card-deck">
-                                    {% for project in projects %}
+                                    {% for project in projects %} {% if project.proj_area == "artigo" %}
                                     <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
                                         <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
                                         <div class="card-body">
@@ -149,7 +85,92 @@
                                             <small class="text-muted">{{project.proj_published_date}}</small>
                                         </div>
                                     </div>
-                                    {% endfor %}
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-eletronica" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for project in projects %} {% if project.proj_area == "eletronica" %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
+                                        <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{project.proj_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{project.proj_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-estagio" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for project in projects %} {% if project.proj_area == "estagio" %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
+                                        <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{project.proj_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{project.proj_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-modelagem" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for project in projects %} {% if project.proj_area == "modelagem" %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
+                                        <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{project.proj_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{project.proj_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-programacaoweb" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for project in projects %} {% if project.proj_area == "programacaoweb" %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
+                                        <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{project.proj_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{project.proj_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="nav-item-tecnico" role="tabpanel">
+                            <div class="row">
+                                <div class="card-deck">
+                                    {% for project in projects %} {% if project.proj_area == "tecnico" %}
+                                    <div class="card col-sm-6 col-md-4 card-no-padding card-shadow-2 mb-4">
+                                        <a href="{{project.get_absolute_url_proj}}"><img class="card-img-top" src="{{project.proj_img1.url}}" style="height: 250px;"></a>
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{project.proj_title}}</h3>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{{project.proj_published_date}}</small>
+                                        </div>
+                                    </div>
+                                    {% endif %} {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -166,6 +187,8 @@
 
 
     <!--Links javascript-->
+    <script src="{% static 'js/text.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
