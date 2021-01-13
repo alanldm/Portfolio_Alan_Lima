@@ -392,6 +392,18 @@ section .bg-port {
 
 /*FIM HISHLIGHTS*/
 
+
+/*DETALHES PORTFÓLIO*/
+
+@media (min-width:769px) {
+    .imagens-details img {
+        display: none !important;
+    }
+}
+
+
+/*FIM DETALHES PORTFÓLIO*/
+
 @media (min-width: 576px) and (max-width: 767.98px) {
     .card-deck .card {
         -ms-flex: 0 0 100% !important;

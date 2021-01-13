@@ -76,7 +76,22 @@
             </div>
             <a class="mb-2" href="{% url 'portfolio_posts:index' %}">Voltar</a>
         </div>
-
+    </section>
+    <section class="imagens-details mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 my-1">
+                    <img src="{{project.proj_img1.url}}" style="width: 100%;">
+                </div>
+            </div>
+            <div class="row">
+                {% for imagem in project.Imagem_projeto.all %}
+                <div class="col-12 my-1">
+                    <img src="{{imagem.imagem.url}}" style="width: 100%;">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 
 
