@@ -25,17 +25,19 @@
         </div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span>&times;</span></a>
         <a href="{% url 'core:index' %}"><i class="fas fa-home" style="margin-right: 5px;"></i>Home</a>
-        <a href="#formacao"><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Estágios</a>
+        <a href="{% url 'portfolio_posts:index' %}"><i class="fas fa-folder-open" style="margin-right: 5px;"></i>Portfólio</a>
+        <a href="#artigo"><i class="fas fa-file-alt" style="margin-right: 5px;"></i>Artigos</a>
+        <a href="#eletronica"><i class="fas fa-microchip" style="margin-right: 5px;"></i>Eletrônica</a>
+        <a href="#estagio"><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Estágios</a>
+        <a href="#modelagem-3d"><i class="fas fa-cube" style="margin-right: 5px;"></i>Modelagem 3D</a>
+        <a href="#programacao-web"><i class="fas fa-code" style="margin-right: 5px;"></i>Programação web</a>
         <a href="#tecnico"><i class="fas fa-cogs" style="margin-right: 5px;"></i>Técnico</a>
-        <a href="#servicos"><i class="fas fa-microchip" style="margin-right: 5px;"></i>Eletrônica</a>
-        <a href="#"><i class="fas fa-cube" style="margin-right: 5px;"></i>Modelagem 3D</a>
-        <a href="#contato"><i class="fas fa-code" style="margin-right: 5px;"></i>Programação web</a>
-        <a href="#"><i class="fas fa-file-alt" style="margin-right: 5px;"></i>Artigos</a>
+
     </div>
     <section class="inicio" style="background-image: url(../../static/img/bg-inicio-ok.PNG); height: 380px;">
         <button type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 my-5" onclick="openNav()" style="position: fixed; z-index: 3; border: 1px solid #323232"><i class="fa fa-bars mr-2"></i>Menu</button>
         <div class="container">
-            <h1 class="pb-5" style="color: #f1f1f1; padding-top: 150px;">HighLights - Meus melhores trabalhos</h1>
+            <h1 class="pb-5" style="color: #f1f1f1; padding-top: 150px;">Highlights - Meus melhores trabalhos</h1>
             <h2>
                 <a href="" class="typewrite" data-period="2000" data-type='[ "Estágio", "Técnico", "Eletrônica", "Programação Web" ]' style="color: #f1f1f1; text-decoration: none;">
                     <span class="wrap"></span>
@@ -54,7 +56,7 @@
             <div class="flex-mosaico">
                 <div style="background-image: url({{highlight.img1.url}});" class="item-1-mosaico"></div>
                 <div class="item-2-mosaico">
-                    <p class="titulo-mosaico mt-5">{{highlight.title2}}</p>
+                    <p class="titulo-mosaico mt-5 px-2">{{highlight.title2}}</p>
                 </div>
             </div>
             <div style="flex-direction: row-reverse;" class="flex-mosaico">
@@ -66,7 +68,7 @@
             {% endfor %}
         </div>
     </section>
-    <footer class="bg-primary pb-2 pt-4" id="footer">
+    <footer class="bg-primary pb-2 pt-4 mt-3" id="footer">
         <div class="container">
             <p class="text-center" style="color: #f4f4f4;">Alan Lima de Medeiros - 2020 - Todos os direitos reservados</p>
         </div>
